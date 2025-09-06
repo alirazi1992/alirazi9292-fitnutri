@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nutritionists | FitNutri</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .nutritionist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .filter-section {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i data-feather="activity" class="text-blue-500 h-8 w-8"></i>
+                        <span class="ml-2 text-xl font-bold text-gray-900">FitNutri</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="trainers.html" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Trainers</a>
+                    <a href="#" class="text-gray-900 hover:text-blue-600 px-3 py-2 text-sm font-medium">Nutritionists</a>
+                    <a href="gyms.html" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Find Gyms</a>
+                    <a href="pricing.html" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="login.html" class="text-gray-500 hover:text-blue-600 px-3 py-2 text-sm font-medium">Login</a>
+                    <a href="register.html" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">Sign Up</a>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-controls="mobile-menu" aria-expanded="false">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-green-500 to-green-600">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-20 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl" data-aos="fade-down">
+                Expert Nutrition Guidance
+            </h1>
+            <p class="mt-3 max-w-md mx-auto text-lg text-green-100 sm:text-xl md:mt-5 md:max-w-3xl" data-aos="fade-up" data-aos-delay="200">
+                Connect with certified nutritionists and dietitians to create personalized meal plans for your health goals.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="lg:flex lg:space-x-8">
+            <!-- Filters Sidebar -->
+            <div class="lg:w-1/4 mb-8 lg:mb-0">
+                <div class="filter-section p-6 rounded-lg shadow-sm sticky top-24">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Filters</h3>
+                    
+                    <!-- Specialty Filter -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2">Specialty</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="weight-loss-nutri" name="specialty" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="weight-loss-nutri" class="ml-2 text-sm text-gray-700">Weight Management</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="sports-nutrition" name="specialty" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="sports-nutrition" class="ml-2 text-sm text-gray-700">Sports Nutrition</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="medical-nutrition" name="specialty" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="medical-nutrition" class="ml-2 text-sm text-gray-700">Medical Nutrition</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="plant-based" name="specialty" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="plant-based" class="ml-2 text-sm text-gray-700">Plant-Based</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="pediatric" name="specialty" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="pediatric" class="ml-2 text-sm text-gray-700">Pediatric Nutrition</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Dietary Approach -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2">Dietary Approach</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="keto" name="diet" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="keto" class="ml-2 text-sm text-gray-700">Ketogenic</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="paleo" name="diet" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="paleo" class="ml-2 text-sm text-gray-700">Paleo</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="mediterranean" name="diet" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="mediterranean" class="ml-2 text-sm text-gray-700">Mediterranean</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="vegan" name="diet" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="vegan" class="ml-2 text-sm text-gray-700">Vegan/Vegetarian</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Price Range -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2">Price Range</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="under-50-nutri" name="price" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="under-50-nutri" class="ml-2 text-sm text-gray-700">Under $50/session</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="50-100-nutri" name="price" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="50-100-nutri" class="ml-2 text-sm text-gray-700">$50 - $100</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="over-100-nutri" name="price" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="over-100-nutri" class="ml-2 text-sm text-gray-700">Over $100</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certification -->
+                    <div class="mb-6">
+                        <h4 class="text-sm font-medium text-gray-700 mb-2">Certification</h4>
+                        <div class="space-y-2">
+                            <div class="flex items-center">
+                                <input id="rd" name="certification" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="rd" class="ml-2 text-sm text-gray-700">Registered Dietitian</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="cns" name="certification" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="cns" class="ml-2 text-sm text-gray-700">Certified Nutrition Specialist</label>
+                            </div>
+                            <div class="flex items-center">
+                                <input id="cnsc" name="certification" type="checkbox" class="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded">
+                                <label for="cnsc" class="ml-2 text-sm text-gray-700">Sports Nutritionist</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="w-full inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                        Apply Filters
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Nutritionists List -->
+            <div class="lg:w-3/4">
+                <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                    <h2 class="text-2xl font-bold text-gray-900">Available Nutritionists</h2>
+                    <div class="mt-2 sm:mt-0">
+                        <select id="sort-nutri" name="sort" class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm rounded-md">
+                            <option>Sort by: Recommended</option>
+                            <option>Sort by: Highest Rated</option>
+                            <option>Sort by: Lowest Price</option>
+                            <option>Sort by: Highest Price</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Nutritionist 1 -->
+                    <div class="nutritionist-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300" data-aos="fade-up">
+                        <div class="relative">
+                            <img class="w-full h-48 object-cover" src="http://static.photos/nutrition/640x360/1" alt="Nutritionist">
+                            <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                                ONLINE
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-start justify-between">
+                                <div>
+                                    <h3 class="text-lg font-bold text-gray-900">Dr. Emily Parker</h3>
+                                    <p class="text-green-600 text-sm">Registered Dietitian</p>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-feather="star" class="h-4 w-4 text-yellow-400 fill-current"></i>
+                                    <span class="ml-1 text-gray-700">4.9 (142)</span>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-gray-600 text-sm">
+                                Specializes in weight management and metabolic health with evidence-based nutrition strategies.
+                            </p>
+                            <div class="mt-4 flex items-center justify-between">
+                                <span class="text-gray-900 font-bold">$95/session</span>
+                                <a href="nutritionist-profile.html" class="text-green-600 hover:text-green-800 text-sm font-medium">View Profile →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nutritionist 2 -->
+                    <div class="nutritionist-card bg-white rounded-lg shadow-sm overflow-hidden transition-all duration-300" data-aos="fade-up" data-aos-delay="
+</body>
+</html>
